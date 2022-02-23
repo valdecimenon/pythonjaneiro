@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Titulo da Página</title>
+
+    <!-- estilo CSS -->
+    <style>
+        #pagina {
+            width: 50%;
+            height: 100%;
+            margin: auto;
+            background-color: antiquewhite;
+        }
+
+        #imagem {
+            width: 70%;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h2,
+        h3 {
+            color: brown;
+        }
+
+    </style>
+
+</head>
+
+<body onload="autoOpacidade()">
+    
+   <div id="pagina"></div>
+
+   <script>
+       var pagina = document.getElementById('pagina');
+       var indImagem = 1;
+       var opacidade = 1;
+       var reduzir = true;
+       
+       pagina.innerHTML = '<h2>Exemplo for</h2>'
+       for (i = 0; i<=3; i++){
+           pagina.innerHTML += '<h3>' + i + '</h3>'
+       }
+
+       pagina.innerHTML += '<h2>Exemplo do while</h2>'
+       var i = 1;
+       do {
+           pagina.innerHTML += '<h3>' + i + '</h3>'
+           i++;
+       } while (i < 5);
+
+       pagina.innerHTML += '<hr>';
+
+       pagina.innerHTML += '<img id="imagem" onclick="trocarImagem()" src="https://softgraf.com/img/img1.jpg"/>'
+
+       function trocarImagem(){
+          var imagem = document.getElementById('imagem');
+          indImagem++;
+
+          if (indImagem > 7)
+            indImagem =1;
+
+          imagem.src = 'https://softgraf.com/img/img' + indImagem + '.jpg';
+       }
+
+       // arrow function
+       const mudarOpacidade = () => {
+           var imagem = document.getElementById('imagem');
+
+            if (opacidade <= 0.1)
+                reduzir = false;
+            else if (opacidade >= 1)
+                reduzir = true;
+
+            if (reduzir)
+                opacidade -= 0.1;
+            else
+                opacidade += 0.1;
+
+           imagem.style.opacity = opacidade;
+       }
+
+       const autoOpacidade = () => {
+           // muda a opacidade a cada 0,1 segundos
+           setInterval("mudarOpacidade()", 100);  
+       }
+      
+
+   </script>
+    
+    
+</body>
+
+
+
+</html>
