@@ -24,6 +24,32 @@
             color: brown;
         }
 
+        p {
+            width: 50%;
+            margin: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        table.centro {
+            width: 400px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            text-align: center;
+            padding:3px;
+            background-color: darksalmon;
+            color: white;
+            margin: 5px;
+        }
+
     </style>
 
 </head>
@@ -85,10 +111,88 @@
            // muda a opacidade a cada 0,1 segundos
            setInterval("mudarOpacidade()", 100);  
        }
-      
 
    </script>
-    
+
+    <hr>
+    <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis alias nostrum inventore excepturi provident sed laudantium molestias quod ea tenetur quam eius, maiores nam eaque nisi repudiandae velit soluta tempore!
+    </p>
+
+    <label for="file">Baixando arquivo:</label>
+    <progress id="file" value="32" max="100">32%</progress>
+
+    <ol type="I">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <ul style="list-style-type: square">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ul>
+
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/jt9V6VXgjm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <hr>
+
+    <form action="/pagina_destino.php" method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome"><br>
+
+        <label>Sobrenome:</label>
+        <input type="text" name="sobrenome">
+
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <canvas id="meuCanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById("meuCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.fillStyle = "red";
+        ctx.fillRect(20,20, 75,50);
+        // Liga a transparência
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50,50, 75,50);
+        ctx.fillStyle ="green";
+        ctx.fillRect(80,80,75,50);
+
+    </script>
+
+    <h1>Exemplo de Tabela</h1>
+    <table class="centro">
+        <tr>
+            <th>Mês</th>
+            <th>Recebimento</th>
+        </tr>
+
+        <tr>
+            <td>Janeiro</td>
+            <td>R$ 100,00</td>
+        </tr>
+
+        <tr>
+            <td>Fevereiro</td>
+            <td>R$ 180,00</td>
+        </tr>
+
+    </table>
+
+    <footer>
+        <p>Autor: Valdeci Menon<br>
+            <a href="https://www.softgraf.com/site/agenda">SOFTGRAF Turmas</a>
+
+        </p>
+
+    </footer>
     
 </body>
 
